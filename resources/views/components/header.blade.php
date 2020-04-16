@@ -1,6 +1,6 @@
 
     @foreach ($header as $item)
-    <header class="header header--bg " style="background-image: url({{$item->photo}});widht='100px';height='100px'">
+    <header class="header header--bg " style="background-image: url({{$item->photo}})"widht='100px'height='100px'>
       <div class="container">
         <nav class="navbar">
           <div class="navbar-header">

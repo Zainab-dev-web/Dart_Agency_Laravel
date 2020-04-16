@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Service;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -45,12 +44,12 @@ class ServiceController extends Controller
         
 
         $service= new Service();
-        $icone = Storage::disk('public')->put('', $request->file('icone'));
+       
         $service->titre=$request->titre;
         $service->text=$request->text;
-        $service->icone = $icone;
+        $service->icone = $request->icone;
         $service->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('service.index');
     }
 
     /**
@@ -89,12 +88,12 @@ class ServiceController extends Controller
             'text'=> 'required|',
             'icone'=> 'required|',
         ]);
-        $icone = Storage::disk('public')->put('', $request->file('icone'));
+        
         $service->titre=$request->titre;
         $service->text=$request->text;
-        $service->icone = $icone;
+        $service->icone = $request->icone;
         $service->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('service.index');
     }
 
     /**
@@ -105,6 +104,8 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        
+        $service->delete();
+        return redirect()->route('service.index');
     }
 }

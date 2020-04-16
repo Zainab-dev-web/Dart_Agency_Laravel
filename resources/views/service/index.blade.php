@@ -9,7 +9,11 @@
 @stop
 
 @section('content')
-   <h2>Présentation</h2>
+   <h2 class='text-center my-2'>Section Service</h2>
+
+<div class='text-center'>
+<a href='{{route('service.create')}}' type="submit" class="btn btn-success my-2 px-3 ">Ajouter</a>
+ </div>
    
     <table class="table" >
         <thead>
@@ -29,12 +33,19 @@
             
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td><img src="{{$item->icone}}" alt=""></td>
+                    <td><div class='thumbnail'><i class='material-icons'>{{$item->icone}}</i></div></td>
                     <td>{{$item->titre}}</td>
                     <td>{{$item->text}}</td>
                     <td>
-                    <a href="{{route('service.show',$item)}}" class='btn btn-info text-white'>Show</a>
-                    <a class="btn btn-info" href="{{route('service.edit', $item)}}">edit</a>
+                      <form action="{{route('service.edit', $item)}}" method="post">
+                        @csrf
+                        <button class='btn btn-white'><i class="far fa-edit text-warning"></i></button>
+                      </form>
+                    <form action="{{route('service.destroy',$item)}}" method="post">
+                      @csrf
+                      @method('DELETE')
+                    <button class='btn btn-white'><i class="fas fa-trash text-danger"></i></button>
+                  </form>
 
                     </td>
                  

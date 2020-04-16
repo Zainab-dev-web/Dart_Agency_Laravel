@@ -13,7 +13,7 @@ class HeaderTableSeeder extends Seeder
     {
         DB::table('headers')->insert([
             
-            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
+            'text' => 'Zainab ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
             'photo'=>'/images/header-background.png',
             
         ]);

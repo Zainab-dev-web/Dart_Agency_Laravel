@@ -9,18 +9,15 @@
 @stop
 
 @section('content')
-   <h2 class='text-center my-2'>Section Testimonial</h2>
+   <h2 class='text-center my-2'>Section Projet</h2>
 
-
-   
     <table class="table" >
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Photo</th>
-            <th scope="col">Texte</th>
             <th scope="col">Titre</th>
-            <th scope="col">Nom</th>
+            <th scope="col">Texte</th>
             <th scope="col">Action</th>
             
             
@@ -28,20 +25,22 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($testi as $item)
+            @foreach ($project as $item)
                 {{-- le dolar se trouve dans le controller le compact --}}
             
                 <tr>
                     <td>{{$item->id}}</td>
                     <td><img src="{{$item->photo}}" alt=""></td>
-                    <td>{{$item->text}}</td>
                     <td>{{$item->titre}}</td>
-                    <td>{{$item->name}}</td>
+                    <td>{{$item->text}}</td>
+                    
                     <td>
+                       
+                            <a href='{{route('project.edit', $item)}}' class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
+                          
                       
-                        <a href='{{route('testi.create')}}'class='btn btn-white'><i class="fas fa-folder-plus text-success"></i></a>
-                     
-                    <form action="{{route('testi.destroy',$item)}}" method="post">
+                    
+                    <form action="{{route('project.destroy',$item)}}" method="post">
                       @csrf
                       @method('DELETE')
                     <button class='btn btn-white'><i class="fas fa-trash text-danger"></i></button>

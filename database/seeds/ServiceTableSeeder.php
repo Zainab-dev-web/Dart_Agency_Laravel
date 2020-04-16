@@ -13,42 +13,42 @@ class ServiceTableSeeder extends Seeder
     {
         DB::table('services')->insert([
             
-            'icone'=>'/images/header-background.png',
+            'icone'=>'trending_up',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
             'titre'=>'Growing Business',
             
         ]);
         DB::table('services')->insert([
             
-            'icone'=>'/images/header-background.png',
+            'icone'=>'access_time',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
             'titre'=>'Save Time',
             
         ]);
         DB::table('services')->insert([
             
-            'icone'=>'/images/header-background.png',
+            'icone'=>'group',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunta',
             'titre'=>'Free Support',
             
         ]);
         DB::table('services')->insert([
             
-            'icone'=>'/images/header-background.png',
+            'icone'=>'apps',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
             'titre'=>'Responsive Design',
             
         ]);
         DB::table('services')->insert([
             
-            'icone'=>'/images/header-background.png',
+            'icone'=>'adjust',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
             'titre'=>'Target Fill Up',
             
         ]);
         DB::table('services')->insert([
             
-            'icone'=>'/images/header-background.png',
+            'icone'=>'local_cafe',
             'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
             'titre'=>'Graphic Design',
             

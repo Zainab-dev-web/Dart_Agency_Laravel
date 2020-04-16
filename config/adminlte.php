@@ -271,7 +271,28 @@ return [
             ],
         ],
         [
-            'text'    => 'Project/Team',
+            'text'    => 'Project',
+            'icon'    => 'fas fa-project-diagram',
+            'submenu' => [
+                [
+                    'text' => 'Tout',
+                    'url'  => 'project',
+                    'icon_color' => 'green',
+                ],
+                [
+                    'text'    => 'Ajout',
+                    'url'     => '#',
+                    'icon_color' => 'aqua',         
+                ],
+                [
+                    'text' => 'Modification',
+                    'url'  => '#',
+                    'icon_color' => 'yellow',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Team',
             'icon'    => 'fas fa-users',
             'submenu' => [
                 [

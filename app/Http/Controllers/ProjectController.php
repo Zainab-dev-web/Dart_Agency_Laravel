@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Testi;
+use App\Project;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
-class TestiController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class TestiController extends Controller
      */
     public function index()
     {
-        $testi=Testi::all();
-        return view('testi.index', compact('testi'));
+        $project=Project::all();
+        return view('project.index', compact('project'));
     }
 
     /**
@@ -26,7 +26,7 @@ class TestiController extends Controller
      */
     public function create()
     {
-        return view('testi.create', compact('testi'));
+        //
     }
 
     /**
@@ -37,31 +37,16 @@ class TestiController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'photo'=> 'required|',
-            'text'=> 'required|',
-            'titre'=> 'required|',
-            'name'=> 'required|',
-        ]);
-            
-
-            $testi= new testi();
-            $image = Storage::disk('public')->put('', $request->file('photo'));
-            $testi->photo = $image;
-            $testi->text=$request->text;
-            $testi->titre=$request->titre;
-            $testi->name=$request->name;
-            $testi->save();
-            return redirect()->route('testi.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Testi  $testi
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Testi $testi)
+    public function show(Project $project)
     {
         //
     }
@@ -69,35 +54,45 @@ class TestiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Testi  $testi
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testi $testi)
+    public function edit(Project $project)
     {
-        //
+        return view('project.edit', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Testi  $testi
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testi $testi)
+    public function update(Request $request, Project $project)
     {
-        //
+        $request->validate([
+            'photo'=> 'required|',
+            'titre'=> 'required|',
+            'text'=> 'required|',
+        ]);
+        $image = Storage::disk('public')->put('', $request->file('photo'));
+        $project->photo = $image;
+        $project->titre=$request->titre;
+        $project->text=$request->text;
+        $project->save();
+        return redirect()->route('project.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Testi  $testi
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Testi $testi)
+    public function destroy(Project $project)
     {
-        $testi->delete();
-        return redirect()->route('testi.index');
+        $project->delete();
+        return redirect()->route('project.index');
     }
 }

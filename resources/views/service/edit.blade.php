@@ -17,13 +17,13 @@
 
             
             <div class="card-body">
-                <form action="{{route('service.update' , $service)}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('service.update' , $service)}}" method="post" >
                     @csrf
                     @method('PUT')
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group col-md-6">
-                            <input type="file" class="form-control @error('icone') is-invalid @enderror" name="icone" value="{{$service->icone}}" />
+                            <input type="text" class="form-control @error('icone') is-invalid @enderror" name="icone" value="{{$service->icone}}" />
                             <div class="validation"></div>
                         </div>
                           @error('icone')  

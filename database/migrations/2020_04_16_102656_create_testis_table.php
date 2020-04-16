@@ -15,6 +15,10 @@ class CreateTestisTable extends Migration
     {
         Schema::create('testis', function (Blueprint $table) {
             $table->id();
+            $table->string('photo');
+            $table->text('text');
+            $table->string('titre');
+            $table->string('name');
             $table->timestamps();
         });
     }

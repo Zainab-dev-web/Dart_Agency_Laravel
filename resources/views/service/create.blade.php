@@ -39,7 +39,7 @@
               
             <div class="form-group col-md-6 mx-auto py-4">
             <label for="">Icone</label>
-            <input type="file" class="form-control @error('icone') is-invalid @enderror" name="icone" value="@if($errors->first('icone')) 
+            <input type="text" class="form-control @error('icone') is-invalid @enderror" name="icone" value="@if($errors->first('icone')) 
             @else{{old('icone')}}@endif"/>
             <div class="validation"></div>
         </div>
