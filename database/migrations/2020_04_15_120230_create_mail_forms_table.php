@@ -18,6 +18,8 @@ class CreateMailFormsTable extends Migration
             $table->string('name');
             $table->string('prenom');
             $table->string('email');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

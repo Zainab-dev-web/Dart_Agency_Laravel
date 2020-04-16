@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('role','RoleController');
 Route::resource('user','UserController');
+// Route::get('templateEmail','MailFormController@news')->name('templateEmail');
 Route::resource('mailForm' , "MailFormController");
 Route::resource('admin' , "AdminController");
 

@@ -14,7 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contact=Contact::all();
+        return view('contact.index', compact('contact'));
     }
 
     /**
@@ -57,7 +58,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('contact.edit', compact('contact'));
     }
 
     /**
@@ -69,7 +70,16 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $request->validate([
+            'adresse'=> 'required|',
+            'numero'=> 'required|',
+            
+        ]);
+        
+        $contact->adresse=$request->adresse;
+        $contact->numero=$request->numero;
+        $contact->save();
+        return redirect()->route('contact.index');
     }
 
     /**

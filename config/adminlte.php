@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>AdminByZaïnab</b>LTE',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -167,7 +167,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
 
     'logout_url' => 'logout',
 
@@ -208,22 +208,11 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => false,
-        ],
+        
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
@@ -231,14 +220,9 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
        
         [
-            'text'    => 'Présentation',
+            'text'    => ' Présentation',
             'icon'    => 'fas fa-images',
             'submenu' => [
                 [
@@ -250,87 +234,56 @@ return [
             ],
         ],
         [
-            'text'    => 'Service',
+            'text'    => ' Service',
             'icon'    => 'fas fa-concierge-bell',
             'submenu' => [
                 [
-                    'text' => 'Ajout',
+                    'text' => 'Modification',
                     'url'  => 'service',
                     'icon_color' => 'aqua',
                 ],
-                [
-                    'text'    => 'Modifiction',
-                    'url'     => '#',
-                    'icon_color' => 'yellow',   
-                ],
-                [
-                    'text' => 'Suppréssion',
-                    'url'  => '#',
-                    'icon_color' => 'red',
-                ],
+                
             ],
         ],
         [
-            'text'    => 'Project',
+            'text'    => ' Project',
             'icon'    => 'fas fa-project-diagram',
             'submenu' => [
                 [
-                    'text' => 'Tout',
+                    'text' => 'Modification',
                     'url'  => 'project',
                     'icon_color' => 'green',
                 ],
-                [
-                    'text'    => 'Ajout',
-                    'url'     => '#',
-                    'icon_color' => 'aqua',         
-                ],
-                [
-                    'text' => 'Modification',
-                    'url'  => '#',
-                    'icon_color' => 'yellow',
-                ],
+                
             ],
         ],
         [
-            'text'    => 'Team',
+            'text'    => ' Team',
             'icon'    => 'fas fa-users',
             'submenu' => [
                 [
-                    'text' => 'Tout',
+                    'text' => 'Modification',
                     'url'  => 'team',
                     'icon_color' => 'green',
                 ],
-                [
-                    'text'    => 'Ajout',
-                    'url'     => '#',
-                    'icon_color' => 'aqua',         
-                ],
-                [
-                    'text' => 'Modification',
-                    'url'  => '#',
-                    'icon_color' => 'yellow',
-                ],
+                
             ],
         ],
         [
-            'text'    => 'Testimonial',
+            'text'    => ' Testimonial',
             'icon'    => 'fas fa-comments',
             'submenu' => [
                 [
-                    'text' => 'Ajout',
+                    'text' => 'Modification',
                     'url'  => 'testi',
                     'icon_color' => 'aqua',
                 ],
-                [
-                    'text'    => 'Suppréssion',
-                    'url'     => '#',
-                    'icon_color' => 'red',           
-                ],
+                
                
             ],
         ],
         [
-            'text'    => 'Contact',
+            'text'    => ' Contact',
             'icon'    => 'fas fa-phone',
             'submenu' => [
                 [
@@ -340,19 +293,13 @@ return [
                 ],
             ],
         ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'aqua',
-        // ],
+        ['header' => 'Inscription'],
+        
+        [
+            'text'       => ' Newsletter',
+            'url'  => 'mailForm',
+            'icon_color' => 'info',
+        ],
     ],
 
     /*

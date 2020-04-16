@@ -10,7 +10,7 @@
             @foreach ($testi as $item)
                 
             <div class="item active">
-              <img class="img-responsive slider__image" src="{{$item->photo}}" alt="">
+              <img class="img-responsive slider__image" src="{{asset('storage/'.$item->photo)}}" alt="">
             <p class="slider__paragraph">{{$item->text}}</p>
             <h3 class="slider__name">{{$item->name}}</h3>
             <p class="slider__title">{{$item->titre}}</p>

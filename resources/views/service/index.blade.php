@@ -11,9 +11,7 @@
 @section('content')
    <h2 class='text-center my-2'>Section Service</h2>
 
-<div class='text-center'>
-<a href='{{route('service.create')}}' type="submit" class="btn btn-success my-2 px-3 ">Ajouter</a>
- </div>
+
    
     <table class="table" >
         <thead>
@@ -22,6 +20,7 @@
             <th scope="col">Icone</th>
             <th scope="col">Titre</th>
             <th scope="col">Texte</th>
+            <th scope="col">Action</th>
             
             
            
@@ -37,10 +36,10 @@
                     <td>{{$item->titre}}</td>
                     <td>{{$item->text}}</td>
                     <td>
-                      <form action="{{route('service.edit', $item)}}" method="post">
-                        @csrf
-                        <button class='btn btn-white'><i class="far fa-edit text-warning"></i></button>
-                      </form>
+                      <a href='{{route('service.create')}}'class='btn btn-white'><i class="fas fa-folder-plus text-success"></i></a>
+                     
+                        <a href='{{route('service.edit', $item)}}'class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
+                     
                     <form action="{{route('service.destroy',$item)}}" method="post">
                       @csrf
                       @method('DELETE')

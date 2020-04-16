@@ -30,8 +30,10 @@
             <div class="footer__third">
               <h2 class="footer__title">CONTACT US</h2>
               <ul>
-                <li><span class="glyphicon glyphicon-envelope"></span> <a href="#">dartagency@gmail.com</a></li>
-                <li><span class="glyphicon glyphicon-earphone"></span> <a href="#">+0123-345-6789</a></li>
+                @foreach ($contact as $item)
+              <li><span class="glyphicon glyphicon-envelope"></span> <a href="#">{{$item->adresse}}</a></li>
+              <li><span class="glyphicon glyphicon-earphone"></span> <a href="#">{{$item->numero}}</a></li>
+                @endforeach
               </ul>
               <h4 class="footer__subscribe__title">Subscribe</h4>
               <div class="subscribe-section">

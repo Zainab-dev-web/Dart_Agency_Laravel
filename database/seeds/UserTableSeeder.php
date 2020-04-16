@@ -21,6 +21,7 @@ class UserTableSeeder extends Seeder
             'email' => 'admin@admin',
             'password' => Hash::make('123456789'),
             'role_id' => 1,
+            'photo' =>'/images/team-pic1.png'
             
             
         ]);
@@ -30,6 +31,7 @@ class UserTableSeeder extends Seeder
             'email' => 'membre@membre',
             'password' => Hash::make('123456789'),
             'role_id' => 2,
+            'photo' => '/images/team-pic2.png'
             
             
         ]);
@@ -39,6 +41,7 @@ class UserTableSeeder extends Seeder
             'email' => 'membre2@membre',
             'password' => Hash::make('123456789'),
             'role_id' => 2,
+            'photo' =>'/images/team-pic3.png'
             
             
         ]);
@@ -48,6 +51,7 @@ class UserTableSeeder extends Seeder
             'email' => 'membre3@membre',
             'password' => Hash::make('123456789'),
             'role_id' => 2,
+            'photo'=> '/images/team-pic4.png',
             
             
         ]);

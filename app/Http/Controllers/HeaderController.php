@@ -79,7 +79,7 @@ class HeaderController extends Controller
         $header->photo = $image;
         $header->text=$request->text;
         $header->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('header.index');
     }
 
     /**

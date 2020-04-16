@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -14,7 +16,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $team=Team::all();
+        $user=User::all();
+        return view('team.index', compact('team', 'user'));
     }
 
     /**
@@ -24,7 +28,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('team.create', compact('team'));
     }
 
     /**
@@ -35,7 +39,20 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id'=> 'required|',
+            'role_id'=> 'required|',
+            'photo'=> 'required|',
+        ]);
+            
+    
+            $team= new Team();
+            $image = Storage::disk('public')->put('', $request->file('photo'));
+            $team->user_id=$request->user_id;
+            $team->role_id=$request->role_id;
+            $team->photo = $image;
+            $team->save();
+            return redirect()->route('team.index');
     }
 
     /**
@@ -57,7 +74,8 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        $user=User::all();
+        return view('team.edit', compact('team','user'));
     }
 
     /**
@@ -69,7 +87,19 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        $request->validate([
+            'user_id'=> 'required|',
+            'role_id'=> 'required|',
+            'photo'=> 'required|',
+        ]);
+        
+            $image = Storage::disk('public')->put('', $request->file('photo'));
+            $team->user_id=$request->user_id;
+            $team->role_id=$request->role_id;
+            $team->photo = $image;
+            $team->save();
+            return redirect()->route('team.index');
+    
     }
 
     /**
@@ -80,6 +110,7 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $team->delete();
+        return redirect()->route('team.index');
     }
 }

@@ -6,7 +6,7 @@
       <form action="{{route('mailForm.store')}}" method="post">
           @csrf
           <div class="form-row text-center">
-            <div class="form-group col-md-4 mx-auto">
+            <div class="form-group col-md-3 mx-auto">
                 <label for="">Nom</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="@if($errors->first('name')) 
                 @else{{old('name')}}@endif"/>
@@ -16,7 +16,7 @@
               <div class="text-danger">{{ $message }}</div>  
               @enderror
 
-              <div class="form-group col-md-4 mx-auto ">
+              <div class="form-group col-md-3 mx-auto ">
                 <label for="">Prénom</label>
                 <input type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="@if($errors->first('prenom')) 
                 @else{{old('prenom')}}@endif"/>
@@ -25,10 +25,19 @@
               @error('prenom')  
               <div class="text-danger">{{ $message }}</div>  
               @enderror
-              <div class="form-group col-md-4 mx-auto">
+              <div class="form-group col-md-3 mx-auto">
                 <label for="">Email</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="@if($errors->first('email')) 
                 @else{{old('email')}}@endif"/>
+                <div class="validation"></div>
+            </div>
+              @error('email')  
+              <div class="text-danger">{{ $message }}</div>  
+              @enderror
+              <div class="form-group col-md-3 mx-auto">
+                <label for="">Mot de pass</label>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="@if($errors->first('password')) 
+                @else{{old('password')}}@endif"/>
                 <div class="validation"></div>
             </div>
               @error('email')  

@@ -11,7 +11,7 @@
           <div class="col-md-4">
             <div class="thumbnail">
               <a href="{{$item->photo}}" target="_blank">
-                <img class="img-responsive" src="{{$item->photo}}" alt="">
+                <img class="img-responsive" src="{{asset('storage/'.$item->photo)}}" alt="">
                 <div class="caption">
                   <h4 class="project__title">{{$item->titre}}</h4>
                   <p class="project__paragraph">{{$item->text}}</p>

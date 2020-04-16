@@ -17,7 +17,8 @@ class MailFormController extends Controller
      */
     public function index()
     {
-        //
+        $mailForm=MailForm::all();
+        return view('mailForm.index', compact('mailForm'));
     }
 
     /**
@@ -42,6 +43,7 @@ class MailFormController extends Controller
             'name'=> 'required|',
             'prenom'=> 'required|',
             'email'=> 'required|',
+            'password'=> 'required|',
         ]);
 
         $mailForm= new MailForm();
@@ -49,6 +51,7 @@ class MailFormController extends Controller
         $mailForm->name = $request->input('name');
         $mailForm->prenom = $request->input('prenom');
         $mailForm->email = $request->input('email');
+        $mailForm->password = $request->input('password');
         $mailForm->save();
         Mail::to('zainabfahem96@gmail.com')->send(new NewsletterMail($mailForm));
         return redirect('/');

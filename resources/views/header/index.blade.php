@@ -30,10 +30,10 @@
                 <tr>
                     <td>{{$item->id}}</td>
                     <td>{{$item->text}}</td>
-                    <td><img src="{{$item->photo}}" alt=""></td>
+                    <td><img class='w-25' src="{{asset('storage/'.$item->photo)}}" alt=""></td>
                     <td>
-                    <a href="{{route('header.show',$item)}}" class='btn btn-info text-white'>Show</a>
-                    <a class="btn btn-info" href="{{route('header.edit', $item)}}">edit</a>
+                  
+                    <a class="btn btn-white" href="{{route('header.edit', $item)}}"><i class="far fa-edit text-warning"></i></a>
 
                     </td>
                  
