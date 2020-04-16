@@ -1,6 +1,6 @@
 
-   
-    <header class="header header--bg">
+    @foreach ($header as $item)
+    <header class="header header--bg " style="background-image: url({{$item->photo}});widht='100px';height='100px'">
       <div class="container">
         <nav class="navbar">
           <div class="navbar-header">
@@ -52,10 +52,13 @@
             
           </div>
         </nav>
+       
         <div class="header__content text-center">
           <h1 class="header__content__title">CREATIVE AGENCY</h1>
-          <p class="header__content__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-          <a class="button button--margin-right button--hover" href="#">LARN MORE</a>
+              
+          <p class="header__content__paragraph">{{$item->text}}</p>
+          @endforeach
+          <a class="button button--margin-right button--hovetr" href="#">LARN MORE</a>
           <a class="button button--hover" href="#" >PURCHASE</a>
         </div>
       </div>

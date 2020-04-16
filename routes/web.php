@@ -22,3 +22,13 @@ Route::resource('role','RoleController');
 Route::resource('user','UserController');
 Route::resource('mailForm' , "MailFormController");
 Route::resource('admin' , "AdminController");
+
+Route::get('admin/users', function () {
+    return  'je suis dans ma page users';
+    });
+
+Route::resource('header','HeaderController');
+Route::resource('service','ServiceController');
+Route::resource('team','TeamController');
+Route::resource('testi','TestiController');
+Route::resource('contact','ContactController');

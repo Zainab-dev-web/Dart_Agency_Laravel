@@ -211,7 +211,7 @@ return [
         [
             'text' => 'search',
             'search' => true,
-            'topnav' => true,
+            'topnav' => false,
         ],
         [
             'text' => 'blog',
@@ -236,57 +236,102 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+       
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Présentation',
+            'icon'    => 'fas fa-images',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Modification',
+                    'url'  => 'header',
+                    'icon_color' => 'yellow',
+                ],
+               
+            ],
+        ],
+        [
+            'text'    => 'Service',
+            'icon'    => 'fas fa-concierge-bell',
+            'submenu' => [
+                [
+                    'text' => 'Ajout',
+                    'url'  => 'service',
+                    'icon_color' => 'aqua',
                 ],
                 [
-                    'text'    => 'level_one',
+                    'text'    => 'Modifiction',
                     'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'icon_color' => 'yellow',   
                 ],
                 [
-                    'text' => 'level_one',
+                    'text' => 'Suppréssion',
                     'url'  => '#',
+                    'icon_color' => 'red',
                 ],
             ],
         ],
-        ['header' => 'labels'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
+            'text'    => 'Project/Team',
+            'icon'    => 'fas fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Tout',
+                    'url'  => 'team',
+                    'icon_color' => 'green',
+                ],
+                [
+                    'text'    => 'Ajout',
+                    'url'     => '#',
+                    'icon_color' => 'aqua',         
+                ],
+                [
+                    'text' => 'Modification',
+                    'url'  => '#',
+                    'icon_color' => 'yellow',
+                ],
+            ],
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
+            'text'    => 'Testimonial',
+            'icon'    => 'fas fa-comments',
+            'submenu' => [
+                [
+                    'text' => 'Ajout',
+                    'url'  => 'testi',
+                    'icon_color' => 'aqua',
+                ],
+                [
+                    'text'    => 'Suppréssion',
+                    'url'     => '#',
+                    'icon_color' => 'red',           
+                ],
+               
+            ],
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
+            'text'    => 'Contact',
+            'icon'    => 'fas fa-phone',
+            'submenu' => [
+                [
+                    'text' => 'Mofidication',
+                    'url'  => 'contact',
+                    'icon_color' => 'yellow',
+                ],
+            ],
         ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'aqua',
+        // ],
     ],
 
     /*
