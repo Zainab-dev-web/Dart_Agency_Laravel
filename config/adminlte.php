@@ -215,11 +215,7 @@ return [
             'can'  => 'manage-blog',
         ],
         ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+        
        
         [
             'text'    => ' Présentation',
@@ -293,13 +289,7 @@ return [
                 ],
             ],
         ],
-        ['header' => 'Inscription'],
         
-        [
-            'text'       => ' Newsletter',
-            'url'  => 'mailForm',
-            'icon_color' => 'info',
-        ],
     ],
 
     /*

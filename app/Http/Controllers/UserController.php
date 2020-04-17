@@ -119,7 +119,7 @@ class UserController extends Controller
     
     public function destroy(User $user)
     {
-        {   if (Storage::exists($user->photo)) {
+           if (Storage::exists($user->photo)) {
             Storage::disk('public')->delete($user->photo);
         } 
         $user->delete();

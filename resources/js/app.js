@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-require('jquery/dist/jquery');
+require('jquery');
 require('bootstrap');
 require('popper.js');
 require('jquery.easing/jquery.easing');
