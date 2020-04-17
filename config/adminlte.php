@@ -263,7 +263,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Modification',
-                    'url'  => 'team',
+                    'url'  => 'user',
                     'icon_color' => 'green',
                 ],
                 

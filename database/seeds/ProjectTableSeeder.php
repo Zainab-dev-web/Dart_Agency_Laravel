@@ -11,44 +11,56 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/featured-project-pic1.png', $filename);
         DB::table('projects')->insert([
             
-            'photo'=>'/images/featured-project-pic1.png',
+            'photo'=>$filename,
             'titre'=>'DESIGN',
             'text'=>'Lorem ipsum dolor sit amet ',
 
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/featured-project-pic2.png', $filename);
         DB::table('projects')->insert([
             
-            'photo'=>'/images/featured-project-pic2.png',
+            'photo'=>$filename,
             'titre'=>'DESIGN',
             'text'=>'Lorem ipsum dolor sit amet ',
 
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/featured-project-pic3.png', $filename);
         DB::table('projects')->insert([
             
-            'photo'=>'/images/featured-project-pic3.png',
+            'photo'=>$filename,
             'titre'=>'DESIGN',
             'text'=>'Lorem ipsum dolor sit amet ',
 
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/featured-project-pic4.png', $filename);
         DB::table('projects')->insert([
             
-            'photo'=>'/images/featured-project-pic4.png',
+            'photo'=>$filename,
             'titre'=>'DESIGN',
             'text'=>'Lorem ipsum dolor sit amet ',
 
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/featured-project-pic5.png', $filename);
         DB::table('projects')->insert([
             
-            'photo'=>'/images/featured-project-pic5.png',
+            'photo'=>$filename,
             'titre'=>'DESIGN',
             'text'=>'Lorem ipsum dolor sit amet ',
 
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/featured-project-pic6.png', $filename);
         DB::table('projects')->insert([
             
-            'photo'=>'/images/featured-project-pic6.png',
+            'photo'=>$filename,
             'titre'=>'DESIGN',
             'text'=>'Lorem ipsum dolor sit amet ',
 

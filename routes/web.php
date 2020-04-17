@@ -18,17 +18,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('role','RoleController');
-Route::resource('user','UserController');
+Route::resource('role','RoleController')->middleware('isAdmin');
+Route::resource('user','UserController')->middleware('isAdmin');
 // Route::get('templateEmail','MailFormController@news')->name('templateEmail');
-Route::resource('mailForm' , "MailFormController");
-Route::resource('admin' , "AdminController");
+Route::resource('mailForm' , "MailFormController")->middleware('isAdmin');
+Route::resource('admin' , "AdminController")->middleware('isAdmin');
 
 
 
-Route::resource('header','HeaderController');
-Route::resource('service','ServiceController');
-Route::resource('project' ,'ProjectController');
-Route::resource('team' ,'TeamController');
-Route::resource('testi','TestiController');
-Route::resource('contact','ContactController');
+Route::resource('header','HeaderController')->middleware('isAdmin');
+Route::resource('service','ServiceController')->middleware('isAdmin');
+Route::resource('project' ,'ProjectController')->middleware('isAdmin');
+Route::resource('team' ,'TeamController')->middleware('isAdmin');
+Route::resource('testi','TestiController')->middleware('isAdmin');
+Route::resource('contact','ContactController')->middleware('isAdmin');

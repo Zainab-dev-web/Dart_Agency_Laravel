@@ -30,14 +30,14 @@
             
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td><img src="{{aseet('storage/'.$item->photo)}}" alt=""></td>
+                    <td><img src="{{asset('storage/'.$item->photo)}}" alt=""></td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->role->role}}</td>
                     
                     <td>
-                      <a href='{{route('team.edit', $item)}}'class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
+                      <a href='{{route('user.edit', $item)}}'class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
                      
-                      <form action="{{route('team.destroy',$item)}}" method="post">
+                      <form action="{{route('user.destroy',$item)}}" method="post">
                         @csrf
                         @method('DELETE')
                       <button class='btn btn-white'><i class="fas fa-trash text-danger"></i></button>

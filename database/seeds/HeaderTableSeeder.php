@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Header;
+use Illuminate\Support\Facades\Storage;
 class HeaderTableSeeder extends Seeder
 {
     /**
@@ -11,10 +12,12 @@ class HeaderTableSeeder extends Seeder
      */
     public function run()
     {
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/header-background.png', $filename);
         DB::table('headers')->insert([
             
             'text' => 'Zainab ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna',
-            'photo'=>'/images/header-background.png',
+            'photo'=>$filename,
             
         ]);
     }

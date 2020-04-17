@@ -11,34 +11,41 @@ class TeamTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {  $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/team-pic1.png', $filename);
         DB::table('teams')->insert([
             
-            'photo'=>'/images/team-pic1.png',
+            'photo'=>$filename,
             'user_id' => 1,
             'role_id'=> 1,
             
             
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/team-pic2.png', $filename);
         DB::table('teams')->insert([
             
-            'photo'=>'/images/team-pic2.png',
+            'photo'=>$filename,
             'user_id' => 2,
             'role_id'=> 2,
             
             
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/team-pic3.png', $filename);
         DB::table('teams')->insert([
             
-            'photo'=>'/images/team-pic3.png',
+            'photo'=>$filename,
             'user_id' => 3,
             'role_id'=> 2,
             
             
         ]);
+        $filename = Str::random(10) . time() . '.png';
+        Storage::disk('public')->copy('/team-pic4.png', $filename);
         DB::table('teams')->insert([
             
-            'photo'=>'/images/team-pic4.png',
+            'photo'=>$filename,
             'user_id' => 4,
             'role_id'=> 2,
             

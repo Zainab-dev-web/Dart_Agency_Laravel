@@ -76,8 +76,12 @@ class ProjectController extends Controller
             'titre'=> 'required|',
             'text'=> 'required|',
         ]);
-        $image = Storage::disk('public')->put('', $request->file('photo'));
-        $project->photo = $image;
+        if($request->hasFile('photo')){
+            Storage::disk('public')->delete($project->photo);
+            $imageName=Storage::disk('public')->put('', $request->file('photo'));
+            $project->photo =$imageName;
+        }
+        
         $project->titre=$request->titre;
         $project->text=$request->text;
         $project->save();
@@ -91,7 +95,9 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Project $project)
-    {
+    {   if (Storage::exists($project->photo)) {
+        Storage::disk('public')->delete($project->photo);
+    } 
         $project->delete();
         return redirect()->route('project.index');
     }

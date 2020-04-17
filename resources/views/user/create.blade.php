@@ -11,7 +11,7 @@
 @section('content')
 <div class="content">
             <h3 class="text-center">Ajouter un membre</h3>    
-    <form action="{{route('team.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('user.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-row text-center">
               
@@ -28,12 +28,12 @@
 
                 <div class="form-group col-md-6 mx-auto py-4">
                     <label for="">Nom</label>
-                    <input type="text" class="form-control @error('user_id') is-invalid @enderror" name="user_id" value="@if($errors->first('user_id')) 
-                    @else{{old('user_id')}}@endif"/>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="@if($errors->first('name')) 
+                    @else{{old('name')}}@endif"/>
                     <div class="validation"></div>
                 </div>
                    
-                    @error('user_id')  
+                    @error('name')  
                     <div class="text-danger">{{ $message }}</div>  
                     @enderror
 

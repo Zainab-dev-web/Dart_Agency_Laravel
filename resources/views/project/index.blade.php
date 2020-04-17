@@ -30,7 +30,7 @@
             
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td><img src="{{asset('storage/'.$item->photo)}}" alt=""></td>
+                    <td><img class="w-50"src="{{asset('storage/'.$item->photo)}}" alt=""></td>
                     <td>{{$item->titre}}</td>
                     <td>{{$item->text}}</td>
                     

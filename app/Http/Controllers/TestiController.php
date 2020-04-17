@@ -96,7 +96,9 @@ class TestiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Testi $testi)
-    {
+    {   {   if (Storage::exists($testi->photo)) {
+        Storage::disk('public')->delete($testi->photo);
+    } 
         $testi->delete();
         return redirect()->route('testi.index');
     }

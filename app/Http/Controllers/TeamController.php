@@ -110,6 +110,9 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
+        {   if (Storage::exists($team->photo)) {
+            Storage::disk('public')->delete($team->photo);
+        } 
         $team->delete();
         return redirect()->route('team.index');
     }

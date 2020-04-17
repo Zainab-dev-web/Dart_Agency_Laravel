@@ -17,32 +17,23 @@
 
             
             <div class="card-body">
-                <form action="{{route('team.update' , $team)}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('user.update' , $user)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                 <div class="row">
-                   <div class="col-12">
-                      
-                    <div class="form-group col-md-6">
-                        <label for="">Nom</label>
-                        <select class="fas" name="icon" id="icon">
-                            @foreach ($users as $item)
-                            @if($item->role_id==2)
-                            <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endif
-                            @endforeach
-                        
-                          </select>
-                        
+                    <div class="col-12">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$user->name}}" />
+                            <div class="validation"></div>
+                        </div>
+                          @error('name')  
+                          <div class="text-danger">{{ $message }}</div>  
+                          @enderror
                     </div>
-                      @error('user_id')  
-                      <div class="text-danger">{{ $message }}</div>  
-                      @enderror
-                   </div>
                    <div class="col-12">
                       
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control @error('role_id') is-invalid @enderror" name="role_id" value="{{$team->role->role}}" />
+                        <input type="text" class="form-control @error('role_id') is-invalid @enderror" name="role_id" value="{{$user->role->role}}" />
                         <div class="validation"></div>
                     </div>
                       @error('role_id')  
@@ -51,7 +42,7 @@
                    </div>
                    <div class="col-12">
                     <div class="form-group col-md-6">
-                        <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{$team->photo}}" />
+                        <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{$user->photo}}" />
                         <div class="validation"></div>
                     </div>
                       @error('photo')  
