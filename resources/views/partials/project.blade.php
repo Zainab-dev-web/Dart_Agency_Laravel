@@ -10,7 +10,7 @@
               
           <div class="col-md-4">
             <div class="thumbnail">
-              <a href="{{$item->photo}}" target="_blank">
+              <a href="{{asset('storage/'.$item->photo)}}" target="_blank">
                 <img class="img-responsive" src="{{asset('storage/'.$item->photo)}}" alt="">
                 <div class="caption">
                   <h4 class="project__title">{{$item->titre}}</h4>

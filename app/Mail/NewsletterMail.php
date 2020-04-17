@@ -29,6 +29,6 @@ class NewsletterMail extends Mailable
      */
     public function build()
     {
-        return $this->from('zainab@gmail.com')->subject('Email de confirmation')->view('mailForm.templateEmail',compact('mailForm'));
+        return $this->from('zainab@gmail.com')->subject('Email de confirmation')->markdown('mailForm.templateEmail',compact('mailForm'));
     }
 }
