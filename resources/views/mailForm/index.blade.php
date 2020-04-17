@@ -34,6 +34,14 @@
                      <td>{{$item->name}}</td>
                      <td>{{$item->prenom}}</td>
                      <td>{{$item->email}}</td>
+
+                     {{-- @if ($item->$newsletter_id) --}}
+                 {{-- <td>{{$item->newsletter_id}}</td> --}}
+                     {{-- @else
+                     <td><p class='p-4 text-uppercase text-white bg-danger'>non envoye</p></td>
+                         
+                     @endif --}}
+                     
                      <td>
                       <a href="{{route('mailForm.show' ,$item)}}"><button class="btn btn-info">Voir</button></a> 
                       </td>

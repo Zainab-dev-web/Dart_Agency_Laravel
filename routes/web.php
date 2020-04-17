@@ -18,10 +18,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/searchUser', 'UserController@search')->name('searchUser')->middleware('isAdmin');
 Route::resource('role','RoleController')->middleware('isAdmin');
 Route::resource('user','UserController')->middleware('isAdmin');
-// Route::get('templateEmail','MailFormController@news')->name('templateEmail');
-Route::resource('mailForm' , "MailFormController")->middleware('isAdmin');
+Route::resource('mailForm' , "MailFormController");
 Route::resource('admin' , "AdminController")->middleware('isAdmin');
 
 

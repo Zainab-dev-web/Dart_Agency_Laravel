@@ -15,6 +15,10 @@ class MailFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(){
+        $this->middleware('isAdmin')->except('store');
+    }
     public function index()
     {
         $mailForm=MailForm::all();
@@ -53,6 +57,7 @@ class MailFormController extends Controller
         $mailForm->email = $request->input('email');
         $mailForm->password = $request->input('password');
         $mailForm->save();
+   
         Mail::to('zainabfahem96@gmail.com')->send(new NewsletterMail($mailForm));
         return redirect('/');
     }

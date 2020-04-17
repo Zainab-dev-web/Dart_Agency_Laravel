@@ -125,4 +125,11 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('user.index');
     }
+    public function search(Request $request){
+        $searchUser = $request->input('search');
+        $user = User::where('id','>',1)->where('name','LIKE', '%'.$searchUser.'%')->get();
+       
+
+        return view('user.index',compact('user','searchUser'));
+    }
 }

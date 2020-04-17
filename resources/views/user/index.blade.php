@@ -35,17 +35,22 @@
                     <td>{{$item->role->role}}</td>
                     
                     <td>
+                      
+
                       <a href='{{route('user.edit', $item)}}'class='btn btn-white'><i class="far fa-edit text-warning"></i></a>
-                     
+                      
+                      @can('admin_delete',App\User::class)
                       <form action="{{route('user.destroy',$item)}}" method="post">
                         @csrf
                         @method('DELETE')
-                      <button class='btn btn-white'><i class="fas fa-trash text-danger"></i></button>
+                        @if($item->role_id !=1)
+                        <button class='btn btn-white'><i class="fas fa-trash text-danger"></i></button>
+                        @endif
                     </form>
+                    @endcan
 
                     </td>
                  
-                   
                 </tr>
      
      

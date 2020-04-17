@@ -24,7 +24,8 @@ class UserTableSeeder extends Seeder
             'email' => 'admin@admin',
             'password' => Hash::make('123456789'),
             'role_id' => 1,
-            'photo' =>$filename
+            'photo' =>$filename,
+            'newsletter_id'=>2,
             
             
         ]);
@@ -36,7 +37,8 @@ class UserTableSeeder extends Seeder
             'email' => 'membre@membre',
             'password' => Hash::make('123456789'),
             'role_id' => 2,
-            'photo' => $filename
+            'photo' => $filename,
+            'newsletter_id'=>2,
             
             
         ]);
@@ -48,7 +50,8 @@ class UserTableSeeder extends Seeder
             'email' => 'membre2@membre',
             'password' => Hash::make('123456789'),
             'role_id' => 2,
-            'photo' =>$filename
+            'photo' =>$filename,
+            'newsletter_id'=>2,
             
             
         ]);
@@ -61,6 +64,7 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'role_id' => 2,
             'photo'=> $filename,
+            'newsletter_id'=>2,
             
             
         ]);

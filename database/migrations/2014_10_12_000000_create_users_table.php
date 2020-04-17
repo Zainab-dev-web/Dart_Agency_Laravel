@@ -27,6 +27,12 @@ class CreateUsersTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->string('photo');
+            $table->bigInteger('newsletter_id')->unsigned();
+            $table->foreign('newsletter_id')
+            ->on('newsletters')
+            ->references('id')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }
