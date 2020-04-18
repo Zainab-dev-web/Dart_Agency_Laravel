@@ -32,3 +32,4 @@ Route::resource('project' ,'ProjectController')->middleware('isAdmin');
 Route::resource('team' ,'TeamController')->middleware('isAdmin');
 Route::resource('testi','TestiController')->middleware('isAdmin');
 Route::resource('contact','ContactController')->middleware('isAdmin');
+Route::resource('icone','IconeController')->middleware('isAdmin');

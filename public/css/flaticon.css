@@ -1,0 +1,36 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 21/06/2017 03:43
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url(/fonts/Flaticon.eot?5ffa04c8131472b2a8936bd2f2ddace7);
+  src: url(/fonts/Flaticon.eot?5ffa04c8131472b2a8936bd2f2ddace7?#iefix) format("embedded-opentype"),
+       url(/fonts/Flaticon.woff?893d67fcf296f267285cf4317f79199d) format("woff"),
+       url(/fonts/Flaticon.ttf?382c4d08ed0b2386866f77b916e82e2e) format("truetype"),
+       url(/images/Flaticon.svg?d281d76348a1d828a78d05c9e47a4c47#Flaticon) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url(/images/Flaticon.svg?d281d76348a1d828a78d05c9e47a4c47#Flaticon) format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-dribbble-logo:before { content: "\F100"; }
+.flaticon-behance-logo:before { content: "\F101"; }
+.flaticon-twitter-logo:before { content: "\F102"; }
+.flaticon-facebook-letter-logo:before { content: "\F103"; }
+

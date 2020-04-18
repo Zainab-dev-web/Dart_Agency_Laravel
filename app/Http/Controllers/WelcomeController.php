@@ -11,6 +11,7 @@ use App\Project;
 use App\Contact;
 use App\User;
 use App\Role;
+use App\Icone;
 class WelcomeController extends Controller
 {
     public function index(){
@@ -20,8 +21,9 @@ class WelcomeController extends Controller
         $testi=Testi::all();
         $project=Project::all();
         $contact=Contact::all();
+        $icones=Icone::all();
         $user=User::all();
         $role=Role::all();
-        return view('welcome', compact('header', 'service', 'team' , 'testi','project', 'contact', 'user','role'));
+        return view('welcome', compact('header', 'service', 'icones','team' , 'testi','project', 'contact', 'user','role'));
     }
 }

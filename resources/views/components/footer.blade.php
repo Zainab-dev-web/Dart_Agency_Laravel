@@ -7,10 +7,9 @@
               <h2 class="footer__title">DART AGENCY</h2>
               <p class="footer-first__paragraph">Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
               <ul class="footer-first__social-icons">
-                <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-                <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-                <li><a href="#"><i class="flaticon-behance-logo"></i></a></li>
+                @foreach ($icones as $item)
+                <li><a href="#"><i class="{{$item->icone}}"></i></a></li>
+                @endforeach
               </ul>
             </div>
           </div>

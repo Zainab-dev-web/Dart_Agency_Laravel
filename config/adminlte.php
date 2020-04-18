@@ -302,6 +302,17 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => ' Icone',
+            'icon'    => 'fas fa-icons',
+            'submenu' => [
+                [
+                    'text' => 'Mofidication',
+                    'url'  => 'icone',
+                    'icon_color' => 'red',
+                ],
+            ],
+        ],
         ['header' => 'Inscription'],
         
         [
