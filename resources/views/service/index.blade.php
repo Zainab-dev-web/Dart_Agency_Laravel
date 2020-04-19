@@ -32,7 +32,7 @@
             
                 <tr>
                     <td>{{$item->id}}</td>
-                    <td><div class='thumbnail'><i class='material-icons'>{{$item->icone}}</i></div></td>
+                    <td><i class='material-icons'>{{$item->icone}}</i></td>
                     <td>{{$item->titre}}</td>
                     <td>{{$item->text}}</td>
                     <td>
@@ -62,6 +62,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="/css/material-icons.css">
 @stop
 
 @section('js')

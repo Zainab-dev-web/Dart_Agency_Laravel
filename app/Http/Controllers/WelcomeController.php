@@ -22,7 +22,7 @@ class WelcomeController extends Controller
         $project=Project::all();
         $contact=Contact::all();
         $icones=Icone::all();
-        $user=User::all();
+        $user=User::inRandomOrder()->take(4)->get();
         $role=Role::all();
         return view('welcome', compact('header', 'service', 'icones','team' , 'testi','project', 'contact', 'user','role'));
     }

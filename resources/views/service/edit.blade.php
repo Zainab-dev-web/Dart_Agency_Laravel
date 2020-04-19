@@ -21,15 +21,26 @@
                     @csrf
                     @method('PUT')
                 <div class="row">
+                    
                     <div class="col-12">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control @error('icone') is-invalid @enderror" name="icone" value="{{$service->icone}}" />
-                            <div class="validation"></div>
-                        </div>
-                          @error('icone')  
-                          <div class="text-danger">{{ $message }}</div>  
-                          @enderror
+                            <label for="">Icone</label>
+                            <select  name="icone" id="icon"class='material-icons'>
+                            <option value="trending_up" selected>&#xe8e5;</option> 
+                            <option value="access_time">&#xe192;</option> 
+                            <option value="group">&#xe7ef;</option>
+                            <option value="apps">&#xe5c3;</option>
+                            <option value="adjust">&#xe39e;</option>
+                            <option value="local_cafe">&#xe541;</option>
+                            </select>
+                        @error('icone')  
+                        <div class="text-danger">{{ $message }}</div>  
+                        @enderror
                     </div>
+                </div>
+                            
+                              
+                       
                     <div class="col-12">
                       
                         <div class="form-group col-md-6">
@@ -66,6 +77,7 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="/css/material-icons.css">
 @stop
 
 @section('js')

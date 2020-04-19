@@ -19,6 +19,8 @@
               <li><a href="#">PORTFOLIO</a></li> 
               <li><a href="#">BLOG</a></li> 
               <li><a href="#">CONTACT</a></li>
+             
+              
               @if(Auth::check() && Auth::user()->role_id ==1)
               <li><a href="{{route('admin.index')}}">ADMIN</a></li>
               @else
@@ -54,6 +56,10 @@
         </nav>
        
         <div class="header__content text-center">
+          <h1 class="header__content__title">Bienvenue sur notre site
+            @if(Auth::check())
+            {{Auth::user()->name}} !
+            @endif</h3>
           <h1 class="header__content__title">CREATIVE AGENCY</h1>
               
           <p class="header__content__paragraph">{{$item->text}}</p>
